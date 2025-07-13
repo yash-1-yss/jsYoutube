@@ -5,11 +5,13 @@ form.addEventListener("submit",function (e) {
     const h=parseInt(document.querySelector("#high").value)
     const w=parseInt(document.querySelector("#weigh").value)
     const result=document.querySelector('#result')
-    if(h!='' && w!=''){
-        result.innerHTML=w/((h*h)/10000)
-   
+     if(h==='' || h<0 || isNaN(h)){
+        result.innerHTML=`please enter valid details`;
+    }
+     else if(w==='' || w<0 || isNaN(w)){
+        result.innerHTML=`please enter valid details`;
     }else{
-        result.innerHTML="please enter valid details"
+        result.innerHTML=w/((h*h)/10000)
     }
     
 })
